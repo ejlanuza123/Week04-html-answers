@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h1>Employee Registration</h1>
+    <form id="employeeForm" action="#" method="post">
+        <!-- Employee Name -->
+        <label for="employee_name">Employee Name:</label>
+        <input type="text" id="employee_name" name="employee_name" required>
+        <br>
+
+        <!-- Employee ID -->
+        <label for="employee_id">Employee ID:</label>
+        <input type="text" id="employee_id" name="employee_id" required>
+        <br>
+
+        <!-- Department -->
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+        <br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        document.getElementById("employeeForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Access form data
+            const formData = new FormData(event.target);
+
+            // Log form data to the console
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+        });
+    </script>
+</body>
+</html>
